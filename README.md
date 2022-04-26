@@ -71,7 +71,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Ruby Community
+- Ruby on rails Community
 
 ## 📝 License
 
