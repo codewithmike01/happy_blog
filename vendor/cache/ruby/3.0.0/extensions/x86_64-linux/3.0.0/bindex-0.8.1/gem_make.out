@@ -1,0 +1,15 @@
+current directory: /home/mike-savy/Documents/microverse/Happyblog/vendor/cache/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20220426-16177-lh45mi.rb extconf.rb
+creating Makefile
+
+current directory: /home/mike-savy/Documents/microverse/Happyblog/vendor/cache/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /home/mike-savy/Documents/microverse/Happyblog/vendor/cache/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/mike-savy/Documents/microverse/Happyblog/vendor/cache/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20220426-16177-p6el4d/skiptrace/internal
