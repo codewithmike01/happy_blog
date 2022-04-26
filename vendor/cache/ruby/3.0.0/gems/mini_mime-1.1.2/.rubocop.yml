@@ -1,5 +1,11 @@
 inherit_gem:
   rubocop-discourse: default.yml
 inherit_mode:
-  merge:
-    - Exclude
+  Exclude:
+    - 'db/**/*'
+    - 'bin/*'
+    - 'config/**/*'
+    - 'Guardfile'
+    - 'Rakefile'
+    - 'node_modules/**/*'
+    - 'vendor/**/*.yml'
