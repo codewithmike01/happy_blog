@@ -7,7 +7,7 @@
 ## Built With
 
 ```bash
-- Ruby
+- Rails
 ```
 
 ## Getting Started
