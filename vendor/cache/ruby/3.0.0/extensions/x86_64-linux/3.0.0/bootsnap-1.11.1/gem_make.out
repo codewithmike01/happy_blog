@@ -1,0 +1,15 @@
+current directory: /home/mike-savy/Documents/microverse/Happyblog/vendor/cache/ruby/3.0.0/gems/bootsnap-1.11.1/ext/bootsnap
+/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20220427-13058-k6e2bl.rb extconf.rb
+creating Makefile
+
+current directory: /home/mike-savy/Documents/microverse/Happyblog/vendor/cache/ruby/3.0.0/gems/bootsnap-1.11.1/ext/bootsnap
+make DESTDIR\= clean
+
+current directory: /home/mike-savy/Documents/microverse/Happyblog/vendor/cache/ruby/3.0.0/gems/bootsnap-1.11.1/ext/bootsnap
+make DESTDIR\=
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: /home/mike-savy/Documents/microverse/Happyblog/vendor/cache/ruby/3.0.0/gems/bootsnap-1.11.1/ext/bootsnap
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20220427-13058-3a96pl/bootsnap
