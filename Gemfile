@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.3'
 
+# rails controller-testing
+gem 'rails-controller-testing'
+# rubocop gem for dicourse
 gem 'rubocop-discourse'
 # Rubocop linter check
 gem 'rubocop', '>= 1.0', '< 2.0'
@@ -34,6 +37,11 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  # gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 5.1.2'
+  # gem 'factory_girl_rails'
+  # gem 'capybara'
+  # gem 'database_cleaner'
 end
 
 group :development do
