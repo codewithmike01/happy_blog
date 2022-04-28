@@ -49,6 +49,12 @@ rails s
  http://localhost:3000/
 ```
 
+- To test app
+
+```
+ rails exec rspec -f d
+```
+
 👤 **Kanu Mike**
 
 - GitHub: [@Ginohmk](https://github.com/Ginohmk)
