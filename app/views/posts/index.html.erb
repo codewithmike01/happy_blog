@@ -1,1 +1,24 @@
-<h1>Here is a list of posts for a given user</h1>
+<div class = users_container>
+  <%= render './helper/user_info' %>
+  
+  <div class = 'posts_container'>
+    <% @posts.each.with_index do |post, index| %>
+      <div class = 'post'>
+        <strong> <%= link_to 'Post #' + (index + 1).to_s, user_post_path(@user.id, post.id) %> </strong>
+        <div class = 'post_info'>
+          <p class = 'post_info_text'> <%=  post.text  %> </p>
+          <p class = 'post_info_comment'> Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %> </p>
+        </div>
+      </div>
+      <div class = 'user_comment'>
+          <% comments = post.five_recent_comment(post.id) %>
+          <% comments.each do |comment|%>
+            <% user = User.all.find(comment.user_id) %>
+            <p> <%= user.name %>: <%= comment.text %> </p>
+          <%end%>
+      </div>
+    <%end%>
+     <button type='button'>pagination</button>
+  </div>
+</div>
+

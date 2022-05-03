@@ -1,2 +1,14 @@
-<h1>Here is a user</h1>
+<div class = 'users_container'>
+    <%= render './helper/user_info' %>
+    
+    <div class = 'user_bio'>
+      <h3>Bio</h3>
+      <%= @user.bio %>
+    </div>
 
+    <div class = 'user_posts'>
+        <% @posts = @user.three_recent_post(@user.id)%>
+        <%= render './helper/post' %>
+    </div>
+        <button type='button'><%= link_to 'See all post', user_posts_path(@user.id) %> </button>
+</div>
