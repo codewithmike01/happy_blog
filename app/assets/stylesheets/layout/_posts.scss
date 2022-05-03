@@ -1,0 +1,73 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.posts_container {
+  display: flex;
+  flex-direction: column;
+  .post {
+    border: 3px solid black;
+    padding: 10px;
+
+    &_info {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+
+      &_text {
+        height: 100%;
+        padding: 10px 0;
+      }
+
+      &_comment {
+        align-self: flex-end;
+      }
+    }
+  }
+
+  .user_comment {
+    border: 3px solid black;
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+  button {
+    margin-top: -20px;
+  }
+}
+
+.posts_user_container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 540px;
+  margin: 0 auto;
+
+  .post_user_container {
+    margin-top: 40px;
+    height: 100%;
+    padding: 20px 10px;
+    border: 3px solid black;
+
+    &_info {
+      display: flex;
+      justify-content: space-between;
+      &_username {
+        height: 100%;
+        padding: 8px;
+        font-weight: bold;
+      }
+
+      &_comment {
+        align-self: flex-end;
+      }
+    }
+    &_text {
+      margin-top: 30px;
+    }
+  }
+
+  .user_comment {
+    border: 3px solid black;
+    padding: 10px;
+  }
+}

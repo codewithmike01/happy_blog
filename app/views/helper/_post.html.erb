@@ -1,0 +1,9 @@
+<% @posts.each.with_index do |post, index| %>
+  <div class = 'post'>
+    <%= 'Post #' + (index + 1).to_s %>
+    <div class = 'post_info'>
+      <p class = 'post_info_text'> <%=  post.text  %> </p>
+      <p class = 'post_info_comment'> Comments: <%= post.comments_counter || 0 %>, Likes: <%= post.likes_counter || 0 %> </p>
+    </div>
+  </div>
+<%end%>
