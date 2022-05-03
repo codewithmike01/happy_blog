@@ -33,6 +33,9 @@
     "dist/**",
     "**/reset*.css",
     "**/bootstrap*.css",
-    "vendor/cache/**/*"
+    "vendor/cache/**/*",
+    "app/assets/stylesheets/**/*.scss",
+    "function",
+    "if"
   ]
 }
