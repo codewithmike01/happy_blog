@@ -10,5 +10,5 @@
         <% @posts = @user.three_recent_post(@user.id)%>
         <%= render './helper/post' %>
     </div>
-        <button type='button'><%= link_to 'See all post', user_posts_path(@user.id) %> </button>
+    <button type='button'><%= link_to 'See all post', user_posts_path(@user.id) %> </button>
 </div>
