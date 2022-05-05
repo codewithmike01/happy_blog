@@ -5,7 +5,12 @@
       <p class = 'post_user_container_info_comment'> Comments: <%= @post.comments_counter || 0 %>, Likes: <%= @post.likes_counter || 0 %> </p>
     </div>
     <div class = 'post_user_container_text' >
+      <div  class = 'text_space'>
         <%= @post.text %>
+      </div>
+      <%= form_with model: @like, url: "/users/#{@user.id}/posts/#{@post.id}/likes", scope: :like  do |form| %>
+        <%= form.submit 'Like post', class: 'submit' %>
+      <%end%>
     </div>
   </div>
   <div class = 'user_comment'>
@@ -15,6 +20,7 @@
       <p> <%= user.name %>: <%= comment.text %> </p>
     <%end%>
   </div>
+  <%= render './helper/comment' %>
 </div>
 
 

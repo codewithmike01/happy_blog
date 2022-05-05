@@ -1,0 +1,24 @@
+<%= form_with model: @post, url: user_posts_path, scope: :post  do |form| %>
+    <%# Input title %>
+    <div class = 'form_control_container_item'> 
+      <div class = 'form_control_container_item_label' >
+        <%= form.label :title %>: 
+      </div>
+      <div >
+        <%= form.text_field :title, class: 'form_control_container_item_input'  %>
+      </div>
+    </div>
+
+    <%# Input text %>
+    <div class = 'form_control_container_item'> 
+      <div class = 'form_control_container_item_label'>
+        <%= form.label 'content' %>: 
+      </div>
+      <div >
+        <%= form.text_area :text, class:'form_control_container_item_textarea' %>
+      </div>
+    </div>
+    <div class ='button_container' >
+      <%= form.submit 'Create Post', class: 'button_container_btn' %>
+    </div>
+<%end%>

@@ -1,0 +1,53 @@
+.form_control_container {
+  h1 {
+    font-size: $big_font;
+    margin-bottom: 60px;
+  }
+  width: 80%;
+  max-width: 540px;
+  margin: auto;
+  margin-top: 30px;
+
+  &_item {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 40px;
+    width: 100%;
+
+    &_label {
+      width: 10%;
+      font-size: $medium_font;
+      font-weight: bold;
+    }
+
+    &_input,
+    &_textarea {
+      width: 370px;
+      border-radius: 18px;
+      padding-left: 7px;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &_input {
+      height: 45px;
+    }
+
+    &_textarea {
+      padding-top: 10px;
+      width: 370px;
+      height: 230px;
+    }
+  }
+
+  .button_container {
+    width: 100%;
+    text-align: center;
+
+    &_btn {
+      @include button;
+    }
+  }
+}

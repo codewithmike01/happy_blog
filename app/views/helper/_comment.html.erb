@@ -1,0 +1,15 @@
+<div class = 'comment_form_container'>
+    <%= form_with model: @comment, url: "/users/#{@user.id}/posts/#{@post.id}/comments", scope: :comment  do |form| %>
+      <div class = 'comment_form_container_form_control'>
+        <div>
+          <%= form.label 'Enter comment' %>
+        </div>
+        <div>
+          <%= form.text_area :text, class: 'text_area' %>
+        </div>
+      </div>
+      <div>
+        <%= form.submit 'Send', class: 'button' %>
+      </div>
+    <%end%>
+  </div>

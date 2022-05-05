@@ -14,6 +14,7 @@
       &_text {
         height: 100%;
         padding: 10px 0;
+        width: 360px;
       }
 
       &_comment {
@@ -63,6 +64,23 @@
 
     &_text {
       margin-top: 30px;
+
+      .submit {
+        padding: 5px;
+        border-radius: 5px;
+        background-color: orange;
+        color: rgb(248, 246, 246);
+        box-shadow: 1px 1px 2px 1px rgba(20, 20, 20, 0.2);
+        border: none;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .text_space {
+        margin-bottom: 20px;
+      }
     }
   }
 
