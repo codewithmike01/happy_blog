@@ -8,10 +8,18 @@
   margin: auto;
   margin-top: 30px;
 
+  .success {
+    @include flash_msg($success_alert_bg, $success_alert_color);
+  }
+
+  .error {
+    @include flash_msg($error_alert_bg, $error_alert_color);
+  }
+
   &_item {
     display: flex;
     align-items: center;
-    gap: 35px;
+    gap: 45px;
     margin-bottom: 40px;
     width: 100%;
 

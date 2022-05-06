@@ -1,4 +1,5 @@
 <div class = users_container>
+  <%= render './helper/flash_msg'%>
   <%= render './helper/user_info' %>
   
   <div class = 'posts_container'>
@@ -13,12 +14,13 @@
       <div class = 'user_comment'>
           <% comments = post.five_recent_comment(post.id) %>
           <% comments.each do |comment|%>
-            <% user = User.all.find(comment.user_id) %>
-            <p> <%= user.name %>: <%= comment.text %> </p>
+            <p> <%= post.user.name %>: <%= comment.text %> </p>
           <%end%>
       </div>
     <%end%>
      <button type='button'>pagination</button>
   </div>
 </div>
+
+
 
