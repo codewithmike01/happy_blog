@@ -1,0 +1,10 @@
+@mixin flash_msg($bg, $color) {
+  background-color: $bg;
+  color: $color;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: $medium_font;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

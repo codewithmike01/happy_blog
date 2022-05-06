@@ -10,6 +10,10 @@
   max-width: 540px;
   margin: 0 auto;
 
+  .success {
+    @include flash_msg($success_alert_bg, $success_alert_color);
+  }
+
   h3 {
     margin-bottom: 20px;
   }
