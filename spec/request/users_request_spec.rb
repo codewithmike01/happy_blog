@@ -12,12 +12,12 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'has placeholder' do
-      expect(response.body).to include 'Here is a list users'
+      expect(response.body).to include 'Number of posts'
     end
   end
 
   context 'User/show' do
-    before(:example) { get '/users/:id' } # get(:user#show)
+    before(:example) { get '/users/148' } # get(:user#show)
     it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
@@ -27,7 +27,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'has placeholder' do
-      expect(response.body).to include 'Here is a user'
+      expect(response.body).to include 'Number of posts'
     end
   end
 end
