@@ -1,0 +1,12 @@
+nav {
+  display: flex;
+  gap: 20px;
+  padding-top: 25px;
+  font-size: 1.2em;
+
+  .nav_item {
+    &_el:hover {
+      color: $hover-text;
+    }
+  }
+}

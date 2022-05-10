@@ -3,7 +3,7 @@
   flex-direction: column;
 
   .post {
-    border: 3px solid black;
+    background-color: $form_bg;
     padding: 10px;
 
     &_info {
@@ -24,7 +24,7 @@
   }
 
   .user_comment {
-    border: 3px solid black;
+    background-color: $form_bg;
     padding: 10px;
     margin-bottom: 30px;
   }
@@ -45,7 +45,7 @@
     margin-top: 40px;
     height: 100%;
     padding: 20px 10px;
-    border: 3px solid black;
+    background-color: $form_bg;
 
     &_info {
       display: flex;
@@ -85,7 +85,7 @@
   }
 
   .user_comment {
-    border: 3px solid black;
+    background-color: $form_bg;
     padding: 10px;
   }
 }

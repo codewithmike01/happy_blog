@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Post model', type: :model do
   subject do
     Post.new(title: 'Real stressed', text: 'Price i have to pay working late', comments_counter: 4, likes_counter: 9,
-             user_id: 148)
+             user_id: 1)
   end
   before { subject.save }
 

@@ -1,0 +1,10 @@
+.alert,
+.notice {
+  color: $success_alert_color;
+  padding: 10px;
+  width: 350px;
+  margin: 10px auto;
+  border-radius: 8px;
+  font-size: $medium_font;
+  text-align: center;
+}
