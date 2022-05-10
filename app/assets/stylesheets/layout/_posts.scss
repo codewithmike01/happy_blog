@@ -81,11 +81,40 @@
       .text_space {
         margin-bottom: 20px;
       }
+
+      .like_delete {
+        display: flex;
+        gap: 20px;
+
+        .delete {
+          text-decoration: none;
+
+          &:hover {
+            background-color: rgb(211, 48, 48);
+          }
+        }
+      }
     }
   }
 
   .user_comment {
     background-color: $form_bg;
     padding: 10px;
+
+    & > div:nth-child(even) {
+      padding: 10px 3px;
+      background-color: rgba(247, 240, 240, 0.5);
+    }
+
+    .comment_delete {
+      display: flex;
+      justify-content: space-between;
+      flex: 1;
+      margin-bottom: 10px;
+
+      .delete:hover {
+        color: red;
+      }
+    }
   }
 }
