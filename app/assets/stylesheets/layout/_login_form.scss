@@ -1,0 +1,47 @@
+.devise_container {
+  width: 80%;
+  max-width: $container_width_max;
+  margin: auto;
+  margin-top: 30px;
+  background-color: $form_bg;
+  border-radius: $border_rad;
+  padding: 30px;
+
+  h2 {
+    font-size: $medium_font;
+    margin-bottom: 30px;
+  }
+
+  .field {
+    margin-bottom: 15px;
+
+    .field_input {
+      height: 30px;
+      width: 350px;
+      border-radius: 18px;
+      padding-left: 7px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .button_container {
+    width: 350px;
+    text-align: center;
+    margin: 10px;
+
+    .btn {
+      @include button;
+    }
+
+    .btn_resend {
+      @include button;
+      width: 80%;
+    }
+  }
+
+  .option_buttom_link:hover {
+    color: $hover-text;
+  }
+}

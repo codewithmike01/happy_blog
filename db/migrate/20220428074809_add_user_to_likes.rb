@@ -3,3 +3,4 @@ class AddUserToLikes < ActiveRecord::Migration[6.1]
     add_reference :likes, :user, null: false, foreign_key: true
   end
 end
+# add_reference :likes, :user, null: false, foreign_key: true

@@ -12,11 +12,14 @@
  *
  */
 
+@import './utility/variables';
 @import './utility/reset';
 @import './utility/flash_message';
-@import './utility/variables';
 @import './utility/button';
+@import './layout/notification';
 @import './layout/users';
 @import './layout/posts';
 @import './layout/form';
 @import './layout/comment';
+@import './layout/login_form';
+@import './layout/nav';

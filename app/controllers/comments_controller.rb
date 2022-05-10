@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = current_user.comments.new(
       text: allowed_params[:text],
-      user_id: @user.id,
+      user_id: current_user.id,
       post_id: @post.id
     )
     if @comment.save

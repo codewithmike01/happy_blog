@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Post', type: :request do
   context 'Posts/index' do
     # before(:example) { get users_path }
-    before(:example) { get '/users/148/posts' }
+    before(:example) { get '/users/1/posts' }
     it 'is success' do
       expect(response).to have_http_status(:ok)
     end
@@ -18,7 +18,7 @@ RSpec.describe 'Post', type: :request do
   end
 
   context 'Posts/show' do
-    before(:example) { get '/users/148/posts/1' }
+    before(:example) { get '/users/1/posts/1' }
     it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
