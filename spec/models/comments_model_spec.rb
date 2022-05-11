@@ -5,7 +5,7 @@ RSpec.describe 'Comment model', type: :model do
   before { subject.save }
 
   it 'Test comment_count method ' do
-    comment = subject.comment_count(subject.post_id)
+    comment = Comment.comment_count(subject.post_id)
     expect(comment).to be_truthy
   end
 end

@@ -6,12 +6,13 @@
       <div class = 'user_info'>
         <h1> <%= @user.name %> </h1>
         <p>Number of posts: <%= @user.posts_counter %>  
-        <%  if @user.id == current_user.id %>
+        <%# <%  if can? :create, @post%> 
+        
          |
         <button> 
           <%= link_to 'Add Post', new_user_post_path(@user.id) %> 
         </button>
-          <%end%>
+         <%# <%end%>  
         </p>
       </div>
 </div>

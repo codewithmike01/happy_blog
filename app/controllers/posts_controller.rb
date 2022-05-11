@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     )
 
     if @post.save
-      @post.update_counter(current_user.id)
+      Post.update_counter(current_user.id)
       redirect_to user_posts_path(current_user.id), success: 'Successfully created a post'
     else
       flash.now[:error] = 'Post was not created'

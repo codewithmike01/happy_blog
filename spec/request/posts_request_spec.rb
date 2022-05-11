@@ -2,8 +2,15 @@ require 'rails_helper'
 
 RSpec.describe 'Post', type: :request do
   context 'Posts/index' do
+    current_user = {
+      id: 1, name: 'Franklyn', photo: 'https://images.unsplash.com/photo-1651517824434-6765ef914960?ixlib',
+      bio: 'He schooled in campain high school', posts_counter: 4, email: 'hello@gmail.com',
+      email_confirmed: true, confirm_token: 'jdhdjdhz7zh', role: ' '
+    }
+
     # before(:example) { get users_path }
     before(:example) { get '/users/1/posts' }
+
     it 'is success' do
       expect(response).to have_http_status(:ok)
     end

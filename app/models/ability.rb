@@ -10,6 +10,7 @@ class Ability
       can :manage, :all
     else
       can :destroy, Post, user_id: user.id
+      can :create, Post.all, user_id: user.id
       can :destroy, Comment, user_id: user.id
     end
     #
