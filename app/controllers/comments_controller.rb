@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
       post_id: @post.id
     )
     if @comment.save
-      @comment.comment_count(params[:post_id])
+      Comment.comment_count(params[:post_id])
       redirect_to user_post_path(params[:user_id], params[:post_id]), notice: 'Successfully created comment'
     else
       redirect_to user_posts_path(params[:user_id])
