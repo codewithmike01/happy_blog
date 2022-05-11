@@ -28,12 +28,12 @@ RSpec.describe 'Post model', type: :model do
   end
 
   it 'Test update_counter method ' do
-    posts = subject.update_counter(subject.user_id)
+    posts = Post.update_counter(subject.user_id)
     expect(posts).to be_truthy
   end
 
   it 'Test  five_recent_comment method ' do
     comments = subject.five_recent_comment(subject.user_id)
-    expect(comments.length).to eq(0)
+    expect(comments.length).to eq(1)
   end
 end

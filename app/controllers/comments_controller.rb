@@ -8,10 +8,16 @@ class CommentsController < ApplicationController
     )
     if @comment.save
       @comment.comment_count(params[:post_id])
-      redirect_to user_post_path(params[:user_id], params[:post_id])
+      redirect_to user_post_path(params[:user_id], params[:post_id]), notice: 'Successfully created comment'
     else
       redirect_to user_posts_path(params[:user_id])
     end
+  end
+
+  def destroy
+    Comment.find(params[:id]).destroy
+    Comment.comment_count(params[:post_id])
+    redirect_to user_post_path(params[:user_id], params[:post_id]), alert: 'Successfully deleted comment'
   end
 
   private

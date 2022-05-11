@@ -4,6 +4,7 @@ RSpec.describe 'Post', type: :request do
   context 'Posts/index' do
     # before(:example) { get users_path }
     before(:example) { get '/users/1/posts' }
+
     it 'is success' do
       expect(response).to have_http_status(:ok)
     end

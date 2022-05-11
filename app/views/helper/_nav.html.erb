@@ -10,5 +10,9 @@
    <div class = 'nav_item' >
       <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav_item_el' %>
   </div>
+
+   <div class = 'nav_item username' >
+      <%= current_user.name %>
+  </div>
   <% end %>
 </nav>

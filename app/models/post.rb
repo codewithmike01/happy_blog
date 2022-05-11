@@ -8,9 +8,9 @@ class Post < ApplicationRecord
   belongs_to :user
 
   # A method that updates the posts counter for a user.
-  def update_counter(post_id)
-    counts = Post.where(user_id: post_id).count
-    user = User.find(post_id)
+  def self.update_counter(user_id)
+    counts = Post.where(user_id: user_id).count
+    user = User.find(user_id)
     user.update(posts_counter: counts)
   end
 
