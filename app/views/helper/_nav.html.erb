@@ -3,9 +3,9 @@
       <%= link_to 'Home', '/', class: 'nav_item_el' %>
   </div>
   <div class = 'nav_item'>
-
+    <% if user_signed_in? %>
      <%= link_to 'Create Post', new_user_post_path(current_user.id), class: 'nav_item_el' %> 
-
+    <% end %>
   </div>
   <div class = 'nav_item' >
       <%= link_to 'Login/Sign-up', new_user_session_path, class: 'nav_item_el' %>

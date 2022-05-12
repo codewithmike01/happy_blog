@@ -12,29 +12,28 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'has placeholder' do
-      expect(response.body).to include 'Number of posts'
+      expect(response.body).to include('Home')
     end
   end
 
   context 'User/show' do
-    current_user = User.new(
-      name: 'Franklyn', photo: 'https://images.unsplash.com/photo-1651517824434-6765ef914960?ixlib',
-      bio: 'He schooled in campain high school', posts_counter: 4, email: 'hello@gmail.com',
-      email_confirmed: true, confirm_token: 'jdhdjdhz7zh'
-    )
-    current_user.save
-    before(:example) { get "/users/#{current_user.id}" } # get(:user#show)
+    before(:example) do
+      user = User.create!(name: 'Novice', email: 'Novicenks@gmail.com', confirmed_at: Time.now, password: 'password',
+                          password_confirmation: 'password', bio: 'okay alright', photo: 'https://photo', posts_counter: 3, role: ' ')
+
+      get user_path(user.id)
+    end
 
     it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
 
     it 'render user/show template' do
-      expect(response).to render_template('users/index')
+      expect(response).to render_template('users/show')
     end
 
     it 'has placeholder' do
-      expect(response.body).to include 'Number of posts'
+      expect(response.body).to include('Novice')
     end
   end
 end
