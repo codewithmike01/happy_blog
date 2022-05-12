@@ -11,9 +11,6 @@ RSpec.describe 'Login/user index page:', type: :feature do
     fill_in 'email', with: user.name
     fill_in 'Password', with: user.password
     click_button 'Log in'
-
-    user2 = User.create!(name: 'Rose', email: 'love@gmail.com', confirmed_at: Time.now, password: 'password',
-                         password_confirmation: 'password', bio: 'okay alright', photo: 'https://photo', posts_counter: 9, role: ' ')
   end
 
   it 'shows Email' do
@@ -61,14 +58,14 @@ RSpec.describe 'Login/user index page:', type: :feature do
   end
 
   it 'Can see usename for all user' do
-    user2 = User.create!(name: 'Boy', email: 'jle@gmail.com', confirmed_at: Time.now, password: 'password',
+    user1 = User.create!(name: 'Boy', email: 'jle@gmail.com', confirmed_at: Time.now, password: 'password',
                          password_confirmation: 'password', bio: 'okay alright', photo: 'https://photo', posts_counter: 3, role: ' ')
     user2 = User.create!(name: 'Girly', email: 'le@gmail.com', confirmed_at: Time.now, password: 'password',
                          password_confirmation: 'password', bio: 'okay alright', photo: 'https://photo', posts_counter: 3, role: ' ')
 
     visit '/'
-    expect(page).to have_content('Boy')
-    expect(page).to have_content('Girly')
+    expect(page).to have_content(user1.name)
+    expect(page).to have_content(user2.name)
   end
 
   it 'Can see Photo for all user' do
@@ -84,10 +81,13 @@ RSpec.describe 'Login/user index page:', type: :feature do
   end
 
   it 'Can see Number of Post for all user' do
+    user2 = User.create!(name: 'Rose', email: 'love@gmail.com', confirmed_at: Time.now, password: 'password',
+                         password_confirmation: 'password', bio: 'okay alright', photo: 'https://photo', posts_counter: 9, role: ' ')
+
     visit '/'
 
     expect(page).to have_content('Number of posts: 4')
-    expect(page).to have_content('Number of posts: 9')
+    expect(page).to have_content("Number of posts: #{user2['posts_counter']}")
   end
 
   it 'redirected to that user show page, when click on a user' do
