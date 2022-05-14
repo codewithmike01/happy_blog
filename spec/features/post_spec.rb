@@ -61,7 +61,7 @@ RSpec.describe 'User Show:', type: :feature do
     post = Post.create!(title: 'Price', text: 'Price life alright', comments_counter: 4, likes_counter: 9,
                         user_id: user.id)
 
-    fill_in 'email', with: user.name
+    fill_in 'email', with: user.email
     fill_in 'Password', with: user.password
     click_button 'Log in'
 
