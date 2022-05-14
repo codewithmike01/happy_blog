@@ -44,5 +44,4 @@ RSpec.describe 'User Show:', type: :feature do
     expect(page).to have_content('Price2')
     expect(page).to have_no_content('Price1')
   end
-
 end

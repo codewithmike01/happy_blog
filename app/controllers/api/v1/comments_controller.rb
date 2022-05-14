@@ -1,5 +1,4 @@
 class Api::V1::CommentsController < ApplicationController
-
   def index
     @comments = Comment.includes(:post).includes(:user).where(user_id: params[:user_id])
   end
