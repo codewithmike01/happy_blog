@@ -4,13 +4,6 @@ require 'rails_helper'
 RSpec.describe 'Login/user index page:', type: :feature do
   before(:each) do
     visit new_user_session_path
-
-    user = User.create!(name: 'Rose', email: 'hope@gmail.com', confirmed_at: Time.now, password: 'password',
-                        password_confirmation: 'password', bio: 'okay alright', photo: 'https://photo', posts_counter: 4, role: ' ')
-
-    fill_in 'email', with: user.name
-    fill_in 'Password', with: user.password
-    click_button 'Log in'
   end
 
   it 'shows Email' do
@@ -57,13 +50,22 @@ RSpec.describe 'Login/user index page:', type: :feature do
     expect(page).to have_content('Signed in successfully.')
   end
 
-  it 'Can see usename for all user' do
+  it 'Can see user name for all user' do
+    user = User.create!(name: 'Rose', email: 'hope@gmail.com', confirmed_at: Time.now, password: 'password',
+                        password_confirmation: 'password', bio: 'okay alright', photo: 'https://photo', posts_counter: 4, role: ' ')
+
+    fill_in 'email', with: user.email
+    fill_in 'Password', with: user.password
+
+    click_button 'Log in'
+
     user1 = User.create!(name: 'Boy', email: 'jle@gmail.com', confirmed_at: Time.now, password: 'password',
                          password_confirmation: 'password', bio: 'okay alright', photo: 'https://photo', posts_counter: 3, role: ' ')
     user2 = User.create!(name: 'Girly', email: 'le@gmail.com', confirmed_at: Time.now, password: 'password',
                          password_confirmation: 'password', bio: 'okay alright', photo: 'https://photo', posts_counter: 3, role: ' ')
 
-    visit '/'
+    visit users_path
+
     expect(page).to have_content(user1.name)
     expect(page).to have_content(user2.name)
   end
@@ -81,20 +83,34 @@ RSpec.describe 'Login/user index page:', type: :feature do
   end
 
   it 'Can see Number of Post for all user' do
+    user = User.create!(name: 'Jonyole', email: 'e@gmail.com', confirmed_at: Time.now, password: 'password',
+                        password_confirmation: 'password', bio: 'okay alright', photo: 'https://photo', posts_counter: 3, role: ' ')
+
+    fill_in 'email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Log in'
+
     user2 = User.create!(name: 'Rose', email: 'love@gmail.com', confirmed_at: Time.now, password: 'password',
                          password_confirmation: 'password', bio: 'okay alright', photo: 'https://photo', posts_counter: 9, role: ' ')
 
-    visit '/'
+    visit users_path
 
-    expect(page).to have_content('Number of posts: 4')
+    expect(page).to have_content('Number of posts: 3')
     expect(page).to have_content("Number of posts: #{user2['posts_counter']}")
   end
 
   it 'redirected to that user show page, when click on a user' do
-    user = User.create!(name: 'Jonum', email: 'johnblinks@gmail.com', confirmed_at: Time.now, password: 'password',
+    visit new_user_session_path
+
+    user = User.create!(name: 'Jonyole', email: 'e@gmail.com', confirmed_at: Time.now, password: 'password',
                         password_confirmation: 'password', bio: 'okay alright', photo: 'https://photo', posts_counter: 3, role: ' ')
 
-    visit '/'
+    fill_in 'email', with: user.email
+    fill_in 'Password', with: user.password
+    click_button 'Log in'
+
+    visit users_path
+
     click_on user.name
     expect(page).to have_current_path(user_path(user.id))
   end

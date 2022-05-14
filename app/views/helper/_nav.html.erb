@@ -1,6 +1,9 @@
 <nav>
-  <div class = 'nav_item' >
+   <div class = 'nav_item' >
       <%= link_to 'Home', '/', class: 'nav_item_el' %>
+  </div>
+  <div class = 'nav_item' >
+      <%= link_to 'Users', '/users', class: 'nav_item_el' %>
   </div>
   <div class = 'nav_item'>
     <% if user_signed_in? %>
