@@ -12,8 +12,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      # devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', sign_up: 'register' }, controllers: { registrations: 'registrations', sessions: 'sessions' }
-      resources :users, only: %i[index show] do
+        resources :users, only: %i[index show] do
         resources :posts, only: %i[index show] do
           resources :comments, only: %i[index create]
         end
