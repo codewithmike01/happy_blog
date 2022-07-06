@@ -8,6 +8,7 @@
 
 ```bash
 - Rails
+- Ruby
 ```
 
 ## Getting Started
