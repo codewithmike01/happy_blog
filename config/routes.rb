@@ -10,10 +10,9 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :api do
+  namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', sign_up: 'register' }, controllers: { registrations: 'registrations', sessions: 'sessions' }
-      resources :users, only: %i[index show] do
+        resources :users, only: %i[index show] do
         resources :posts, only: %i[index show] do
           resources :comments, only: %i[index create]
         end
@@ -21,7 +20,8 @@ Rails.application.routes.draw do
     end
   end
 
-  # get 'api/v1/users/register', to: 'api/v1/registrations#new'
-  # get 'api/v1/users/login', to: 'api/v1/sessions#new
+  post 'api/v1/register', to: 'api/v1/registrations#create', defaults: { format: :json }
+  get 'api/v1/login', to: 'api/v1/sessions#create', defaults: { format: :json }
+
   root 'homes#index'
 end
